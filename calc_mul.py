@@ -5,13 +5,21 @@ import re
 def calc(A,B):
         ai = str(A)
         bi = str(B)
+        p = re.compile(r'^\d+$')
+        if p.match(ai) and p.match(bi):
+                a = int(ai)
+                b = int(bi)
+                if 1 <= a <= 999 and 1 <= b <= 999:
+                        valid = True
+                else:
+                        valid = False
+        else:
+                valid = False
 
-        p = re.compile(r'^[1-9]\d{0,2}$')
-
-        if not (p.match(ai) and p.match(bi)):
+        if valid:
+                return a * b
+        else:
                 return -1
-
-        return int(ai) * int(bi)
         
                 
 def main ():

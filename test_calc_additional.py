@@ -78,7 +78,7 @@ class TestCalcAdditional(unittest.TestCase):
 
         # ==============================
         # 両方が型不正
-        # ==============================
+
 
         def test_both_string (self):
                 self.assertEqual(-1, calc("a","b"))
